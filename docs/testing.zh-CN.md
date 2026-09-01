@@ -19,12 +19,26 @@ git diff --check
 GOWORK=off GOTOOLCHAIN=local go test ./... -run 'TestName' -count=1
 ```
 
-当前发现的测试和 benchmark 入口：
-- `BenchmarkResponseDecoder`
+## 已发现测试入口
+
+本清单从当前仓库的 `_test.go` 文件生成。这里刻意保持完整，用于在代码变化时发现 test、benchmark、fuzz 与 example 覆盖说明是否过期。
+
+已发现入口总数：5。
+
+### Tests（4）
 - `TestDataEncoderDotStuffsAndWritesTerminator`
 - `TestRequestEncoderWritesCommandLine`
 - `TestResponseDecoderAggregatesMultilineResponse`
 - `TestResponseEncoderWritesMultilineResponse`
+
+### Benchmarks（1）
+- `BenchmarkResponseDecoder`
+
+### Fuzz Targets（0）
+- 当前没有声明 Fuzz 入口。
+
+### Examples（0）
+- 当前没有声明 Example 函数。
 
 ## Race 检查
 
